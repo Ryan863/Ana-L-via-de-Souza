@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  /* Warm editorial sand & cream palette (Inspired by Sand & Steel reference) */
+  --bg-primary: #F7F3EC;
+  --bg-surface: #FFFFFF;
+  --bg-sand: #EFE7DC;
+  --bg-sand-light: #FBF8F3;
+  --bg-sand-muted: #E6DCCD;
+  
+  --text-dark: #241A14;
+  --text-espresso: #2D211A;
+  --text-body: #59493E;
+  --text-muted: #7E6E62;
+  --text-light: #FAF6F0;
+  
+  --accent-warm: #8C6239;
+  --accent-rose: #C68670;
+  --accent-rose-soft: #E8D3C8;
+  --accent-cream: #F5EEE6;
+  
+  --border-light: rgba(90, 68, 54, 0.10);
+  --border-medium: rgba(90, 68, 54, 0.18);
+  --border-sand: #E2D7C8;
+  
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-sand-bg: var(--bg-primary);
+  --color-sand-surface: var(--bg-surface);
+  --color-sand-warm: var(--bg-sand);
+  --color-sand-light: var(--bg-sand-light);
+  --color-sand-muted: var(--bg-sand-muted);
+  
+  --color-espresso: var(--text-dark);
+  --color-espresso-medium: var(--text-espresso);
+  --color-espresso-body: var(--text-body);
+  --color-espresso-muted: var(--text-muted);
+  
+  --color-warm-accent: var(--accent-warm);
+  --color-rose-accent: var(--accent-rose);
+  --color-rose-soft: var(--accent-rose-soft);
+  --color-border-sand: var(--border-sand);
+  
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-dark);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #2D211A;
+  color: #FAF6F0;
+}
+
+/* Typography Helpers */
+.font-editorial-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.015em;
+}
+
+.font-editorial-sans {
+  font-family: var(--font-sans);
+}
+
+/* Editorial Button Styles */
+.btn-editorial-dark {
+  background-color: #261C14;
+  color: #FAF6F0;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(38, 28, 20, 0.12);
+}
+.btn-editorial-dark:hover {
+  background-color: #3D2D21;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(38, 28, 20, 0.18);
+}
+
+.btn-editorial-light {
+  background-color: #FFFFFF;
+  color: #261C14;
+  border: 1px solid rgba(90, 68, 54, 0.15);
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(38, 28, 20, 0.04);
+}
+.btn-editorial-light:hover {
+  background-color: #F7F2EB;
+  border-color: rgba(90, 68, 54, 0.28);
+  transform: translateY(-1px);
+}
+
+/* 21st Dev Style Aurora Glow for Warm Luxury Background */
+@keyframes warm-aurora {
+  0% {
+    background-position: 0% 50%, 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%, 75% 75%;
+  }
+  100% {
+    background-position: 0% 50%, 50% 50%;
+  }
+}
+
+.warm-aurora-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: blur(45px);
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(243, 222, 208, 0.7) 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(245, 233, 217, 0.8) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(235, 221, 204, 0.6) 0%, transparent 55%);
+  animation: warm-aurora 18s ease-in-out infinite;
+}
+
+/* Soft delicate texture & mask */
+.editorial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-sand);
+  border-radius: 1.5rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.editorial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(50, 36, 26, 0.07);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CFC1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BEB1A0;
+}
